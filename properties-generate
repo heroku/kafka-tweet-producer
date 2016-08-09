@@ -1,6 +1,29 @@
 #!/usr/bin/env bash
 set -ueo pipefail
 
+cat > twitter-source.properties <<TWITTER_PROPERTIES
+name=twitter-source
+connector.class=com.eneco.trading.kafka.connect.twitter.TwitterSourceConnector
+tasks.max=1
+topic=test
+twitter.consumerkey=$TWITTER_CONSUMER_KEY
+twitter.consumersecret=$TWITTER_CONSUMER_SECRET
+twitter.token=$TWITTER_TOKEN
+twitter.secret=$TWITTER_SECRET
+
+# set output.format to string to output string key/values, it defaults to structured
+output.format=string
+
+language=en
+#stream.type=sample
+stream.type=filter
+track.terms=$TWITTER_TRACK_TERMS
+# San Francisco OR New York City
+#track.locations=-122.75,36.8,-121.75,37.8,-74,40,-73,41
+# bbcbreaking,bbcnews,justinbieber
+# track.follow=5402612,612473,27260086
+TWITTER_PROPERTIES
+
 echo bootstrap.servers=${KAFKA_URL//kafka+ssl:\/\//}
 echo rest.port=$PORT
 

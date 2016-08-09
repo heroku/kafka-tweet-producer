@@ -1,1 +1,1 @@
-web: bin/run-confluent twitter-source.properties.example
+web: bin/run-confluent twitter-source.properties
