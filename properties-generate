@@ -58,9 +58,9 @@ offset.flush.interval.ms=10000
 # SSL properties
 security.protocol=SSL
 
-ssl.truststore.location=.truststore.jks
+ssl.truststore.location=$HOME/.truststore.jks
 ssl.truststore.password=$TRUSTSTORE_PASSWORD
 
-ssl.keystore.location=.keystore.jks
+ssl.keystore.location=$HOME/.keystore.jks
 ssl.keystore.password=$KEYSTORE_PASSWORD
 PROPERTIES
