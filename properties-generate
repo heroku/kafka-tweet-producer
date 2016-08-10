@@ -26,7 +26,7 @@ track.terms=$TWITTER_TRACK_TERMS
 TWITTER_PROPERTIES
 
 # Convert PEM files to JKS files
-setup_certs KAFKA
+./setup_certs KAFKA
 
 # Output Confluent properties (which get piped to a properties file by the calling script)
 echo bootstrap.servers=${KAFKA_URL//kafka+ssl:\/\//}
