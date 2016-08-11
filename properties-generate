@@ -29,14 +29,14 @@ TWITTER_PROPERTIES
 ./setup_certs KAFKA
 
 # Output Confluent properties (which get piped to a properties file by the calling script)
-echo security.protocol=SSL
+echo producer.security.protocol=SSL
 
-echo ssl.truststore.location=$HOME/.truststore.jks
-echo ssl.truststore.password=$TRUSTSTORE_PASSWORD
+echo producer.ssl.truststore.location=$HOME/.truststore.jks
+echo producer.ssl.truststore.password=$TRUSTSTORE_PASSWORD
 
-echo ssl.keystore.location=$HOME/.keystore.jks
-echo ssl.keystore.password=$KEYSTORE_PASSWORD
-echo ssl.key.password=$KEYSTORE_PASSWORD
+echo producer.ssl.keystore.location=$HOME/.keystore.jks
+echo producer.ssl.keystore.password=$KEYSTORE_PASSWORD
+echo producer.ssl.key.password=$KEYSTORE_PASSWORD
 
 echo bootstrap.servers=${KAFKA_URL//kafka+ssl:\/\//}
 echo rest.port=$PORT
