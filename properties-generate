@@ -31,7 +31,7 @@ TWITTER_PROPERTIES
 # Output Confluent properties (which get piped to a properties file by the calling script)
 echo security.protocol=SSL
 
-echo ssl.truststore.location=$HOME/.cacerts
+echo ssl.truststore.location=$HOME/.truststore.jks
 echo ssl.truststore.password=$TRUSTSTORE_PASSWORD
 
 echo ssl.keystore.location=$HOME/.keystore.jks

@@ -24,15 +24,15 @@ trusted_cert="$(echo $addon)_TRUSTED_CERT"
 }
 
 rm -f .{keystore,truststore}.{pem,pkcs12,jks}
-rm -f .cacerts
+#rm -f .cacerts
 
-cp /etc/ssl/certs/java/cacerts ./.cacerts
+#cp /etc/ssl/certs/java/cacerts ./.cacerts
 
 echo -n "${!client_key}" >> .keystore.pem
 echo -n "${!client_cert}" >> .keystore.pem
 echo -n "${!trusted_cert}" > .truststore.pem
 
-keytool -importcert -file .truststore.pem -keystore .cacerts -deststorepass $TRUSTSTORE_PASSWORD -noprompt
+keytool -importcert -file .truststore.pem -keystore .truststore.jks -deststorepass $TRUSTSTORE_PASSWORD -noprompt
 
 openssl pkcs12 -export -in .keystore.pem -out .keystore.pkcs12 -password pass:$KEYSTORE_PASSWORD
 keytool -importkeystore -srcstoretype PKCS12 \
