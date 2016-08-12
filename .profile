@@ -21,6 +21,7 @@ cp -a confluent-3.0.0/* $HOME/
 # fix broken symlink
 cd $HOME/share/java/kafka
 ln -sf kafka_2.11-0.10.0.0-cp1.jar kafka.jar
+cd $HOME
 
 echo "Copied Confluent ${CONFLUENT_VERSION} successfully" | indent
 
@@ -29,4 +30,4 @@ rm -rf $HOME/confluent-3.0.0
 
 echo "Deleted extra share and confluent directories to reduce slug size" | indent
 
-export CLASSPATH="/app/target/kafka-connect-twitter-0.1-jar-with-dependencies.jar"
+export CLASSPATH="$CLASSPATH:/app/target/kafka-connect-twitter-0.1-jar-with-dependencies.jar"
