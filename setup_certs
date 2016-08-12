@@ -24,7 +24,7 @@ trusted_cert="$(echo $addon)_TRUSTED_CERT"
 }
 
 rm -f .{keystore,truststore}.{pem,pkcs12,jks}
-#rm -f .cacerts
+rm -f .cacerts
 
 #cp /etc/ssl/certs/java/cacerts ./.cacerts
 
