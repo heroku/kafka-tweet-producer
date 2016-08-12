@@ -30,4 +30,3 @@ rm -rf $HOME/confluent-3.0.0
 echo "Deleted extra share and confluent directories to reduce slug size" | indent
 
 export CLASSPATH="/app/target/kafka-connect-twitter-0.1-jar-with-dependencies.jar"
-mv $HOME/.start $HOME/bin/start

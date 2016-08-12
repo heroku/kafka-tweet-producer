@@ -70,4 +70,4 @@ offset.storage.file.filename=/tmp/connect.offsets
 offset.flush.interval.ms=10000
 PROPERTIES
 
-bin/connect-standalone $CONFLUENT_PROPERTIES_FILE $TWITTER_PROPERTIES_FILE
+./bin/connect-standalone $CONFLUENT_PROPERTIES_FILE $TWITTER_PROPERTIES_FILE
