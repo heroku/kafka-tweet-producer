@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
+indent() {
+    sed -u 's/^/      /'
+}
+
 # download and "install" confluent
 ARCHIVE_URL=${ARCHIVE_URL_OVERRIDE:-http://packages.confluent.io/archive/3.0/confluent-3.0.0-2.11.tar.gz}
 
