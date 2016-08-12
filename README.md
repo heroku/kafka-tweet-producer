@@ -1,7 +1,8 @@
 #### Get the code and create a Heroku app
 ```
-git clone
+git clone git@github.com:crcastle/kafka-connect-twitter.git
 cd kafka-connect-twitter
+git checkout develop
 heroku create
 ```
 
@@ -30,7 +31,7 @@ heroku config:set TWITTER_TOKEN=
 heroku config:set TWITTER_TRACK_TERMS=news,music,hadoop,clojure,scala,fp,golang,python,fsharp,cpp,java
 ```
 
-#### Deploy to Heroku
+#### Deploy to Heroku (*note the special branch trickery required. will fix later.*)
 ```
-git push heroku master
+git push heroku -f develop:master
 ```

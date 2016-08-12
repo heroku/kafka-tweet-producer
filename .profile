@@ -24,3 +24,5 @@ rm -rf $HOME/share/java/kafka-connect-hdfs $HOME/share/java/schema-registry $HOM
 rm -rf $HOME/confluent-3.0.0
 
 echo "Deleted extra share and confluent directories to reduce slug size" | indent
+
+export CLASSPATH="/app/target/kafka-connect-twitter-0.1-jar-with-dependencies.jar"
