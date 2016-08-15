@@ -11,7 +11,7 @@ cat > $TWITTER_PROPERTIES_FILE <<TWITTER_PROPERTIES
 name=twitter-source
 connector.class=com.eneco.trading.kafka.connect.twitter.TwitterSourceConnector
 tasks.max=1
-topic=test
+topic=$KAFKA_TOPIC
 twitter.consumerkey=$TWITTER_CONSUMER_KEY
 twitter.consumersecret=$TWITTER_CONSUMER_SECRET
 twitter.token=$TWITTER_TOKEN
