@@ -17,6 +17,11 @@ heroku config:set KEYSTORE_PASSWORD=changeit
 heroku config:set TRUSTSTORE_PASSWORD=changeit
 ```
 
+#### Define the Kafka topic name
+```
+heroku config:set KAFKA_TOPIC=test
+```
+
 #### Setup required Twitter environment variables after creating a Twitter application
 To obtain the required keys, visit https://apps.twitter.com/ and `Create a New App`. Fill in an application name & description & web site and accept the developer aggreement. Click on `Create my access token` and populate the below environment variables with consumer key & secret and the access token & token secret.
 ```
@@ -31,7 +36,9 @@ heroku config:set TWITTER_TOKEN=
 heroku config:set TWITTER_TRACK_TERMS=news,music,hadoop,clojure,scala,fp,golang,python,fsharp,cpp,java
 ```
 
-#### Deploy to Heroku (*note the special branch trickery required. will fix later.*)
+#### Deploy to Heroku and scale-up the dyno type! (*note the special branch trickery required. will fix later.*)
 ```
 git push heroku -f develop:master
+h ps:scale web=1
+heroku dyno:type standard-1x
 ```
