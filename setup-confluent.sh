@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 BUILD_DIR=$1
-CACHE_DIR=$2
-ENV_DIR=$3
 
 indent() {
   # Handle GNU vs BSD sed
@@ -15,8 +13,7 @@ indent() {
 }
 
 # download and "install" confluent
-ARCHIVE_URL_OVERRIDE=$(cat ${ENV_DIR}/ARCHIVE_URL_OVERRIDE)
-ARCHIVE_URL=${ARCHIVE_URL_OVERRIDE:-http://packages.confluent.io/archive/3.0/confluent-3.0.0-2.11.tar.gz}
+ARCHIVE_URL="http://packages.confluent.io/archive/3.0/confluent-3.0.0-2.11.tar.gz"
 
 echo "Downloading Confluent..." | indent
 
