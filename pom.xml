@@ -237,6 +237,11 @@
                         </goals>
                         <configuration>
                             <executable>${basedir}/setup-confluent.sh</executable>
+                            <arguments>
+                              <argument>${env.BUILD_DIR}</argument>
+                              <argument>${env.CACHE_DIR}</argument>
+                              <argument>${env.ENV_DIR}</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                 </executions>
