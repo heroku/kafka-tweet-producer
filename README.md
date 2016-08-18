@@ -21,7 +21,7 @@ heroku config:set KAFKA_TOPIC=test
 
 #### Setup the required environment variables for this Kafka Producer
 ```
-heroku config:set KAFKA_HEAP_OPTS=-Xmx4g
+heroku config:set KAFKA_HEAP_OPTS=-Xmx1g
 heroku config:set KEYSTORE_PASSWORD=changeit
 heroku config:set TRUSTSTORE_PASSWORD=changeit
 ```
@@ -43,8 +43,8 @@ heroku config:set TWITTER_TRACK_TERMS=news,music,hadoop,clojure,scala,fp,golang,
 #### Deploy to Heroku and scale-up the dyno type!
 ```
 git push heroku master
-h ps:scale web=1
-heroku dyno:type standard-2x
+heroku ps:scale web=1
+heroku dyno:type performance-m
 ```
 
 ### Thanks and License
