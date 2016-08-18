@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -eo pipefail
 
 BUILD_DIR=$1
 CACHE_DIR=$2
