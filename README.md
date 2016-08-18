@@ -24,6 +24,7 @@ heroku config:set KAFKA_TOPIC=test
 heroku config:set KAFKA_HEAP_OPTS=-Xmx1g
 heroku config:set KEYSTORE_PASSWORD=changeit
 heroku config:set TRUSTSTORE_PASSWORD=changeit
+heroku config:set CLASSPATH="/app/target/kafka-connect-twitter-0.1-jar-with-dependencies.jar"
 ```
 
 #### Setup required Twitter environment variables after creating a Twitter application
