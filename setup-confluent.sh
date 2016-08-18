@@ -2,7 +2,11 @@
 set -eo pipefail
 
 indent() {
-    sed -u 's/^/      /'
+  case $(sed --help 2>&1) in
+    *GNU*) sed_u () { sed -u "$@"; };;
+    *) sed_u () { sed "$@"; };;
+  esac
+  sed_u 's/^/      /'
 }
 
 # download and "install" confluent
