@@ -10,7 +10,7 @@ heroku create
 - Attach: `heroku addons:attach my-originating-app::KAFKA` (where "my-originating-app" is an app to which the cluster is already attached)
 If you created a new cluster, wait until it is ready to use.  This command will read you a quote from Franz Kafka when the cluster is ready to use.
 ```
-heroku kafka:wait; say $(curl https://kafka-quoter.herokuapp.com)
+heroku kafka:wait; say $(curl http://kafkafra.nz)
 ```
 
 #### Create a Kafka topic and configure. I use the name `test` here but you can use any [valid Kafka topic name](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/common/Topic.scala#L29-L31).
@@ -19,7 +19,7 @@ heroku kafka:create test
 ```
 Creating a new topic takes some time.  Use the same command to wait until it's done, then set this environment variable with the name of the topic.
 ```
-heroku kafka:wait; say $(curl https://kafka-quoter.herokuapp.com)
+heroku kafka:wait; say $(curl http://kafkafra.nz)
 heroku config:set KAFKA_TOPIC=test
 ```
 
