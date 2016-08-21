@@ -1,8 +1,18 @@
-#### Get the code and create a Heroku app
+#### Get the code
 ```
 git clone git@github.com:crcastle/kafka-tweet-producer.git
 cd kafka-tweet-producer
+```
+
+#### Create a Heroku app
+You can create an app in one of the following two ways.  If you're ok with Heroku's randomly generated app name
+```
 heroku create
+```
+
+If you want to create your own app name
+```
+heroku create my-awesome-app-name
 ```
 
 #### Create Kafka cluster *or* attach existing cluster
@@ -15,9 +25,9 @@ heroku kafka:wait; say $(curl kafkafra.nz)
 
 #### Create a Kafka topic and configure. I use the name `test` here but you can use any [valid Kafka topic name](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/common/Topic.scala#L29-L31).
 ```
-heroku kafka:create test
+heroku kafka:create test --partitions 1
 ```
-Creating a new topic takes some time.  Use the same command to wait until it's done, then set this environment variable with the name of the topic.
+Creating a new topic takes some time.  Use the same command "wait" command to wait until it's done, then set this environment variable with the name of the topic.
 ```
 heroku kafka:wait; say $(curl kafkafra.nz)
 heroku config:set KAFKA_TOPIC=test
