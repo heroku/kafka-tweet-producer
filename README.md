@@ -46,8 +46,8 @@ To obtain the required keys, visit https://apps.twitter.com/ and `Create a New A
 ```
 heroku config:set TWITTER_CONSUMER_KEY=
 heroku config:set TWITTER_CONSUMER_SECRET=
-heroku config:set TWITTER_SECRET=
-heroku config:set TWITTER_TOKEN=
+heroku config:set TWITTER_ACCESS_TOKEN=
+heroku config:set TWITTER_ACCESS_TOKEN_SECRET=
 ```
 
 #### Define environment variable containing terms to track in tweets ([more details](https://dev.twitter.com/streaming/overview/request-parameters#track))

@@ -9,8 +9,8 @@ tasks.max=1
 topic=test
 twitter.consumerkey=$TWITTER_CONSUMER_KEY
 twitter.consumersecret=$TWITTER_CONSUMER_SECRET
-twitter.token=$TWITTER_TOKEN
-twitter.secret=$TWITTER_SECRET
+twitter.token=$TWITTER_ACCESS_TOKEN
+twitter.secret=$TWITTER_ACCESS_TOKEN_SECRET
 
 # set output.format to string to output string key/values, it defaults to structured
 output.format=string
