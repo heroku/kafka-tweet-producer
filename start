@@ -50,8 +50,8 @@ rest.port=$PORT
 # copied from Kafka Connect distribution etc/kafka/connect-standalone.properties example file
 # The converters specify the format of data in Kafka and how to translate it into Connect data. Every Connect user will
 # need to configure these based on the format they want their data in when loaded from or stored into Kafka
-key.converter=org.apache.kafka.connect.storage.StringConverter
-value.converter=org.apache.kafka.connect.storage.StringConverter
+key.converter=org.apache.kafka.connect.json.JsonConverter
+value.converter=org.apache.kafka.connect.json.JsonConverter
 
 # Converter-specific settings can be passed in by prefixing the Converter's setting with the converter we want to apply
 # it to
