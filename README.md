@@ -55,11 +55,10 @@ heroku config:set TWITTER_ACCESS_TOKEN_SECRET=
 heroku config:set TWITTER_TRACK_TERMS=news,music,hadoop,clojure,scala,fp,golang,python,fsharp,cpp,java
 ```
 
-#### Deploy to Heroku and scale-up the dyno type!
+#### Deploy to Heroku and scale-up the dyno type! (A dyno with at least 1GB of RAM -- i.e standard-2x -- is recommended.)
 ```
 git push heroku master
-heroku ps:scale web=1
-heroku dyno:type performance-m
+heroku ps:scale web=1:standard-2x
 ```
 
 ### Thanks and License
