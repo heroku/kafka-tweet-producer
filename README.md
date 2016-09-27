@@ -1,6 +1,6 @@
 #### Get the code
 ```
-git clone git@github.com:crcastle/kafka-tweet-producer.git
+git clone git@github.com:heroku/kafka-tweet-producer.git
 cd kafka-tweet-producer
 ```
 
