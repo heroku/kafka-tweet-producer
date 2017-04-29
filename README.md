@@ -14,11 +14,14 @@ If you want to create your own app name
 ```
 heroku create my-awesome-app-name
 ```
-
 #### Create Kafka cluster *or* attach existing cluster
-- Create: `heroku addons:create heroku-kafka:beta-standard-0`
-- Attach: `heroku addons:attach my-originating-app::KAFKA` (where "my-originating-app" is an app to which the cluster is already attached)
-If you created a new cluster, wait until it is ready to use.  This command will read you a quote from Franz Kafka when the cluster is ready to use.
+- Create: `heroku addons:create heroku-kafka:standard-0`
+- Attach: `heroku addons:attach my-originating-app::KAFKA` (where "my-originating-app" is an app to which the cluster is already attached) If you created a new cluster, wait until it is ready to use.
+This command will read you a quote from Franz Kafka when the cluster is ready to use.
+_Note: if you do not already have the heroku-kafka plugin installed, you will need to do so._```
+heroku plugins:install heroku-kafka
+```
+
 ```
 heroku kafka:wait; say $(curl kafkafra.nz)
 ```
