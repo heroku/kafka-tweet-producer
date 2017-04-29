@@ -46,6 +46,7 @@ heroku config:set CLASSPATH="/app/target/kafka-connect-twitter-0.1-jar-with-depe
 
 #### Setup required Twitter environment variables after creating a Twitter application
 To obtain the required keys, visit https://apps.twitter.com/ and `Create a New App`. Fill in an application name & description & web site and accept the developer aggreement. Click on `Create my access token` and populate the below environment variables with consumer key & secret and the access token & token secret.
+
 ```
 heroku config:set TWITTER_CONSUMER_KEY=
 heroku config:set TWITTER_CONSUMER_SECRET=
