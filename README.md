@@ -28,7 +28,7 @@ heroku kafka:wait; say $(curl kafkafra.nz)
 
 #### Create a Kafka topic and configure. I use the name `test` here but you can use any [valid Kafka topic name](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/common/Topic.scala#L29-L31).
 ```
-heroku kafka:create test --partitions 1
+heroku kafka:topics:create test --partitions 1
 ```
 Creating a new topic takes some time.  Use the same command "wait" command to wait until it's done, then set this environment variable with the name of the topic.
 ```
