@@ -64,4 +64,4 @@ heroku ps:scale web=1:standard-2x
 ### Thanks and License
 This repo is mostly code from [Eneco/kafka-connect-twitter](https://github.com/Eneco/kafka-connect-twitter) but configured to be easily deployable to Heroku and use an [Apache Kafka on Heroku](https://heroku.com/kafka) cluster.  The license for that code can be found [here](https://github.com/Eneco/kafka-connect-twitter/blob/develop/LICENSE).
 
-Additionally, [check here](https://github.com/Eneco/kafka-connect-twitter/compare/217b89cba3d90b9c6335672597fc828ff2e0c334...HEAD) to see what, if any, changes have been made to the [Eneco/kafka-connect-twitter](https://github.com/Eneco/kafka-connect-twitter) repo since its code was copied to this repo.
+Additionally, [check here](https://github.com/Eneco/kafka-connect-twitter/compare/af63e4c...HEAD) to see what, if any, changes have been made to the [Eneco/kafka-connect-twitter](https://github.com/Eneco/kafka-connect-twitter) repo since its code was copied to this repo.
