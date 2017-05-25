@@ -16,7 +16,7 @@ heroku create my-awesome-app-name
 ```
 
 #### Create Kafka cluster *or* attach existing cluster
-- Create: `heroku addons:create heroku-kafka:beta-standard-0`
+- Create: `heroku addons:create heroku-kafka:standard-0`
 - Attach: `heroku addons:attach my-originating-app::KAFKA` (where "my-originating-app" is an app to which the cluster is already attached)
 If you created a new cluster, wait until it is ready to use.  This command will read you a quote from Franz Kafka when the cluster is ready to use.
 ```
