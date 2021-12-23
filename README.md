@@ -14,18 +14,21 @@ If you want to create your own app name
 ```
 heroku create my-awesome-app-name
 ```
-
 #### Create Kafka cluster *or* attach existing cluster
-- Create: `heroku addons:create heroku-kafka:beta-standard-0`
-- Attach: `heroku addons:attach my-originating-app::KAFKA` (where "my-originating-app" is an app to which the cluster is already attached)
-If you created a new cluster, wait until it is ready to use.  This command will read you a quote from Franz Kafka when the cluster is ready to use.
+- Create: `heroku addons:create heroku-kafka:standard-0`
+- Attach: `heroku addons:attach my-originating-app::KAFKA` (where "my-originating-app" is an app to which the cluster is already attached) If you created a new cluster, wait until it is ready to use.
+This command will read you a quote from Franz Kafka when the cluster is ready to use.
+_Note: if you do not already have the heroku-kafka plugin installed, you will need to do so._```
+heroku plugins:install heroku-kafka
+```
+
 ```
 heroku kafka:wait; say $(curl kafkafra.nz)
 ```
 
 #### Create a Kafka topic and configure. I use the name `test` here but you can use any [valid Kafka topic name](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/common/Topic.scala#L29-L31).
 ```
-heroku kafka:create test --partitions 1
+heroku kafka:topics:create test --partitions 1
 ```
 Creating a new topic takes some time.  Use the same command "wait" command to wait until it's done, then set this environment variable with the name of the topic.
 ```
@@ -43,6 +46,7 @@ heroku config:set CLASSPATH="/app/target/kafka-connect-twitter-0.1-jar-with-depe
 
 #### Setup required Twitter environment variables after creating a Twitter application
 To obtain the required keys, visit https://apps.twitter.com/ and `Create a New App`. Fill in an application name & description & web site and accept the developer aggreement. Click on `Create my access token` and populate the below environment variables with consumer key & secret and the access token & token secret.
+
 ```
 heroku config:set TWITTER_CONSUMER_KEY=
 heroku config:set TWITTER_CONSUMER_SECRET=
